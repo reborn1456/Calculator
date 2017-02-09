@@ -3,3 +3,5 @@ Complex Calculator/Complex Calculator/Debug/vc140.idb
 *.pdb
 Complex Calculator/Complex Calculator/Debug/Complex Calculator.log
 Complex Calculator/Complex Calculator/Debug/main.obj
+*.tlog
+Complex Calculator/Complex Calculator.VC.VC.opendb

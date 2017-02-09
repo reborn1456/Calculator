@@ -10,6 +10,7 @@ int main()
 
 	float a, b, res;
 	double c;
+	float power = 2;
 	char choice;
 
 	do
@@ -18,8 +19,9 @@ int main()
 		cout << "2.Subtraction\n";
 		cout << "3.Multiplication\n";
 		cout << "4.Division\n";
-		cout << "7.Square Root\n";
-		cout << "5.Exit\n\n";
+		cout << "5.Square\n";
+		cout << "6.Square Root\n";
+		cout << "7.Exit\n\n";
 		cout << "Enter Your Choice : ";
 		cin >> choice;
 		switch (choice)
@@ -44,12 +46,12 @@ int main()
 			res = a / b;
 			cout << "Result = " << res;
 			break;
-		case '5': cout << "Enter two number : ";
+		case '5': cout << "Enter a number : ";
 			cin >> c;
-			res = squ(c);
+			res = pow(c,power);
 			cout << "Result = " << res;
 			break;
-		case'6': cout << "Enter two number : ";
+		case'6': cout << "Enter a number : ";
 			cin >> c;
 			res = sqrt(c);
 			cout << "Result = " << res;
