@@ -6,7 +6,7 @@
 
 using namespace std;
 
-int main()
+int main(int argc, char *argv[])
 {
 	
 	//number the user will enter
@@ -25,6 +25,7 @@ int main()
 	char mathOp;
 	//float variable for the total of the two numbers the user enters
 	float sum; 
+	string userInput;
 	char choice;
 
 	//do while to loop through the program
@@ -57,60 +58,119 @@ int main()
 			switch (mathOp)
 			{
 			//doing the addition
-			case '+': sum = num1 + num2; 
+				case '+': sum = num1 + num2; 
 				break;
 			}
 			cout << "Result = " << sum;
 			break;
 		//subtraction
 		case '2': cout << "Enter your calculation : ";
-			cin >> num1 >> num2;
-			sum = num1 - num2;
+			//input integer
+			cin >> num1;
+			//input operator
+			cin >> mathOp;
+			cin >> num2;
+			switch (mathOp)
+			{
+			//doing the subtraction
+				case '-': sum = num1 - num2;
+				break;
+			}
 			cout << "Result = " << sum;
 			break;
 		//multiplication
 		case '3': cout << "Enter your calculation : ";
-			cin >> num1 >> num2;
-			sum = num1*num2;
+			//input integer
+			cin >> num1;
+			//input operator
+			cin >> mathOp;
+			cin >> num2;
+			switch (mathOp)
+			{
+			//doing the subtraction
+				case '*': sum = num1 * num2;
+				break;
+			}
 			cout << "Result = " << sum;
 			break;
 		//division
 		case '4': cout << "Enter your calculation : ";
-			cin >> num1 >> num2;
-			sum = num1 / num2;
+			//input integer
+			cin >> num1;
+			//input operator
+			cin >> mathOp;
+			cin >> num2;
+			switch (mathOp)
+			{
+				//doing the subtraction
+			case '/': sum = num1 / num2;
+				break;
+			}
 			cout << "Result = " << sum;
 			break;
 		//multiply to a power
-		case '5': cout << "Enter your calculation : ";
+		case '5': cout << "Enter your base number : ";
 			cin >> num1;
-			cout << "Enter to which power : ";
+			cout << "Enter the power : ";
 			cin >> power;
-			sum = pow(num1, power);
-			cout << "Result = " << sum;
+			total = pow(num1, power);
+			cout << "Result = " << total;
 			break;
 		//square root
-		case'6': cout << "Enter your calculation : ";
+		case'6': cout << "Please enter the number you want to Sqaure Root : ";
 			cin >> num1;
-			sum = sqrt(num1);
-			cout << "Result = " << sum;
+			total = sqrt(num1);
+			cout << "Result = " << total;
 			break;
 		//circle calculation
-		case'7': cout << "Enter your calculation : ";
-			cin >> num1;
-			sum = sqrt(num1);
-			cout << "Result = " << sum;
+		case'7': cout << "What do you want to calculate? ";
+			cout << "Area - 1" << endl;
+			cout << "Circumference - 2" << endl;
+			cin >> userInput;
+
+			//if 1 is entered it will go to the area calculation
+			if (userInput == "1")
+			{
+				cout << "Please input value of radius for the area: " << endl;
+				//inputting radius
+				cin >> radius;
+				//calculating area e.g Pi*r^2
+				area = pi * (radius*radius); 
+				//outputting area
+				cout << "The area of the circle is " << area << endl;
+			}
+			//if 2 is entered it will calculate circumference
+			else if (userInput == "2") 
+			{
+				cout << "Please input the diameter of the circle for the circumference: " << endl;
+				//inputting diameter
+				cin >> diam;
+				//calculating circumference e.g Pi*d
+				circum = pi * diam;
+				//outputting circumference
+				cout << "The circumference is " << circum;
 			break;
 		//degree to radian
-		case'8': cout << "Enter your calculation : ";
-			cin >> num1;
-			sum = sqrt(num1);
-			cout << "Result = " << sum;
+		case'8': cout << "Enter your angle : ";
+			cin >> angle;
+			radian = (pi / numForRadian) * angle;
+			cout << angle << " degrees in radian is " << radian;
 			break;
 		//percentage
 		case'9': cout << "Enter your calculation : ";
+			//input integer
 			cin >> num1;
-			sum = sqrt(num1);
-			cout << "Result = " << sum;
+			//input operator
+			cin >> mathOp;
+			cin >> num2;
+			switch (mathOp)
+			{
+			case '/': percentage = num1 / num2 * 100;
+				break;
+			default:
+				cout << "Error - Invalid Input!";
+			}
+			cout << "Result = " << percentage;
 			break;
 		//to exit the program
 		case '10': exit(0);
@@ -120,8 +180,10 @@ int main()
 		default: cout << "Wrong Choice..!!";
 			break;
 		}
+
 		//make a 分隔線
 		cout << "\n------------------------------------\n";
+
 	} while (choice != 5 && choice != getchar());
 	
 	return 0;
